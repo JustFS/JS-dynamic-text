@@ -1,41 +1,21 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 3rem;
-}
-.text {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-top: -20px;
-  margin-left: -250px;
-  height: 40px;
-}
-p {
-  display: inline-block;
-  vertical-align: top;
+* {
   margin: 0;
+  padding: 0;
 }
-.word {
-  position: absolute;
-  width: 300px;
-  opacity: 0;
+body {
+  background: #55b9f3;
+  height: 100vh; 
+  background: #55b9f3;
+  animation: blow 7s linear infinite;
+  height: 200px;
+  width: 200px;
 }
-.letter {
-  display: inline-block;
-  position: relative;
-  transform: translateZ(25px);
-  transform-origin: 50% 50% 25px;
-}
-.letter.out {
-  transform: rotateX(90deg);
-  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.letter.behind {
-  transform: rotateX(-90deg);
-}
-.letter.in {
-  transform: rotateX(0deg);
-  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.logo {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column; 
+  color: #fff;
+  font-size: 50px;
 }
