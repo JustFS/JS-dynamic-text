@@ -1,21 +1,29 @@
-* {
-  margin: 0;
-  padding: 0;
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  background: #333;
 }
-body {
-  background: #55b9f3;
-  height: 100vh; 
-  background: #55b9f3;
-  animation: blow 7s linear infinite;
-  height: 200px;
-  width: 200px;
+
+#page-wrapper {
+  width: 600px;
+  background: #FFF;
+  padding: 1em;
+  margin: 1em auto;
+  min-height: 300px;
+  border-top: 5px solid #69c773;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
-.logo {
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column; 
-  color: #fff;
-  font-size: 50px;
+
+h1 {
+	margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+#fileDisplayArea {
+  margin-top: 2em;
+  width: 100%;
+  overflow-x: auto;
 }
