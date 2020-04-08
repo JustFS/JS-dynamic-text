@@ -11,18 +11,22 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link href="./style.css" rel="stylesheet">
 </head>
+
 <body class="text-center badge-dark">
 
-  <h1>IMAGES & CO</h1>
+  
+  <h1 class="m-5">IMAGES & CO</h1>
 
-  <div class="form-group text-center">
-    <label>Sélectionnez une image :</label>
-    <input type="file" id="fileInput" class="form-control-file">
+  <div class="container">
+    <div class="form-control p-4">
+      <label>Sélectionnez une image :</label>
+      <input type="file" id="fileInput">
+    </div>
   </div>
 
-  <div id="fileDisplay"></div>
+  <div id="fileDisplay" class="m-3"></div>
 
-  <button class="btn btn-danger">Envoyer</button>
+  <button class="btn btn-light m-3" onclick="alert('stockage BD')">Envoyer</button>
 
     
   <script src="./assets/jquery.min.js" type="text/javascript" ></script>

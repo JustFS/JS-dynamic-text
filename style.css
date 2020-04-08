@@ -1,0 +1,7 @@
+.form-control {
+  height: 80px;
+}
+#fileDisplay img {
+  max-width: 90%;
+  box-shadow: 0 0 10px #222;
+}

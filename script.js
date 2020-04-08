@@ -1,34 +1,28 @@
-// window.onload = function() {
+const fileInput = document.getElementById('fileInput');
+const fileDisplay = document.getElementById('fileDisplay');
 
-  const fileInput = document.getElementById('fileInput');
-  const fileDisplay = document.getElementById('fileDisplay');
+fileInput.addEventListener('change', function(){
 
+  const file = fileInput.files[0];
+  const imageType = /image.*/;
 
-  fileInput.addEventListener('change', function(e) {
-    
-    const file = fileInput.files[0];
-    const imageType = /image.*/;
+  // condition pour savoir si l'image est au bon format
+  if (file.type.match(imageType)) {
+    // si jamais "fichier non supporté" est affiché
+    fileDisplay.innerHTML = "";
 
-    if (file.type.match(imageType)) {
-      const reader = new FileReader();
+    const fileReader = new FileReader();
 
-      console.log(file.type);
+    fileReader.onload = function() {
+      const img = new Image();
       
+      img.src = fileReader.result;
+      fileDisplay.appendChild(img);
+    };
 
-      reader.onload = function(e) {
-        
-        // si jamais file note supported est écrit
-        fileDisplay.innerHTML = "";
+    fileReader.readAsDataURL(file);
 
-        const img = new Image();
-        img.src = reader.result;
-
-        fileDisplay.appendChild(img);
-      }
-
-      reader.readAsDataURL(file);	
-    } else {
-      fileDisplay.innerHTML = "File not supported!"
-    }
-  });
-// };
+  } else {
+    fileDisplay.innerHTML = "Fichier non supporté !";
+  }
+});
