@@ -1,29 +1,34 @@
-window.onload = function() {
+// window.onload = function() {
 
-  var fileInput = document.getElementById('fileInput');
-  var fileDisplayArea = document.getElementById('fileDisplayArea');
+  const fileInput = document.getElementById('fileInput');
+  const fileDisplay = document.getElementById('fileDisplay');
 
 
   fileInput.addEventListener('change', function(e) {
-    var file = fileInput.files[0];
-    var imageType = /image.*/;
+    
+    const file = fileInput.files[0];
+    const imageType = /image.*/;
 
     if (file.type.match(imageType)) {
-      var reader = new FileReader();
+      const reader = new FileReader();
+
+      console.log(file.type);
+      
 
       reader.onload = function(e) {
-        fileDisplayArea.innerHTML = "";
+        
+        // si jamais file note supported est écrit
+        fileDisplay.innerHTML = "";
 
-        var img = new Image();
+        const img = new Image();
         img.src = reader.result;
 
-        fileDisplayArea.appendChild(img);
+        fileDisplay.appendChild(img);
       }
 
       reader.readAsDataURL(file);	
     } else {
-      fileDisplayArea.innerHTML = "File not supported!"
+      fileDisplay.innerHTML = "File not supported!"
     }
   });
-
-}
+// };
