@@ -1,21 +1,24 @@
 const fileInput = document.getElementById('fileInput');
 const fileDisplay = document.getElementById('fileDisplay');
 
-fileInput.addEventListener('change', function(){
+fileInput.addEventListener('change', function() {
 
   const file = fileInput.files[0];
-  const imageType = /image.*/;
+  const imageType= /image.*/;
 
-  // condition pour savoir si l'image est au bon format
+  // Check image format
   if (file.type.match(imageType)) {
-    // si jamais "fichier non supporté" est affiché
-    fileDisplay.innerHTML = "";
-
+    
+    // Take off error text if it stands on the DOM
+    fileDisplay.innerHTML= "";
+    
+    // create new Object from constructor FileReader
     const fileReader = new FileReader();
 
     fileReader.onload = function() {
+      // constructor Image() is exaclty like "document.createElement('img')"
       const img = new Image();
-      
+
       img.src = fileReader.result;
       fileDisplay.appendChild(img);
     };
@@ -23,6 +26,6 @@ fileInput.addEventListener('change', function(){
     fileReader.readAsDataURL(file);
 
   } else {
-    fileDisplay.innerHTML = "Fichier non supporté !";
+    fileDisplay.innerHTML = "File not supported";
   }
 });

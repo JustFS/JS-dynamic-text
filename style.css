@@ -1,5 +1,5 @@
 .form-control {
-  height: 80px;
+  height: 80px !important;
 }
 #fileDisplay img {
   max-width: 90%;
